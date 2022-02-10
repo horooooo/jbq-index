@@ -1,0 +1,220 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabs/index"
+		},
+		{
+			"path": "pages/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/tabs/parent",
+			"style": {
+				"navigationBarTitleText": "家长"
+			}
+		},
+		{
+			"path": "pages/tabs/student"
+		},
+		{
+			"path": "pages/tabs/personal",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/article",
+			"style": {
+				"navigationBarTitleText": "文章"
+			}
+		},
+		{
+			"path": "pages/video",
+			"style": {
+				"navigationBarTitleText": "视频"
+			}
+		},
+		{
+			"path": "pages/book",
+			"style": {
+				"navigationBarTitleText": "课外读物"
+			}
+		},
+		{
+			"path": "pages/mp3",
+			"style": {
+				"navigationBarTitleText": "电子音频"
+			}
+		},
+		{
+			"path": "pages/learning",
+			"style": {
+				"navigationBarTitleText": "课程学习"
+			}
+		},
+		{
+			"path": "pages/method",
+			"style": {
+				"navigationBarTitleText": "学习方法"
+			}
+		},
+		{
+			"path": "pages/soloLessons",
+			"style": {
+				"navigationBarTitleText": "自习室"
+			}
+		},
+		{
+			"path": "pages/integral",
+			"style": {
+				"navigationBarTitleText": "积分明细"
+			}
+		},
+		{
+			"path": "pages/achievement",
+			"style": {
+				"navigationBarTitleText": "成就"
+			}
+		},
+		{
+			"path": "pages/personalData",
+			"style": {
+				"navigationBarTitleText": "我的信息"
+			}
+		},
+		{
+			"path": "pages/vip",
+			"style": {
+				"navigationBarTitleText": "会员充值"
+			}
+		},
+		{
+			"path": "pages/friendRequest",
+			"style": {
+				"navigationBarTitleText": "好友请求"
+			}
+		},
+		{
+			"path": "pages/sign",
+			"style": {
+				"navigationBarTitleText": "签到"
+			}
+		},
+		{
+			"path": "pages/shopping/sign",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		{
+			"path": "pages/shopping/mallSearch",
+			"style": {
+				"navigationBarTitleText": "商城搜索"
+			}
+		},
+		{
+			"path": "pages/shopping/searchList",
+			"style": {
+				"navigationBarTitleText": "搜索页"
+			}
+		},
+		{
+			"path": "pages/shopping/shoppingCart",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+
+		{
+			"path": "pages/shopping/productDetails",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path": "pages/expandIn",
+			"style": {
+				"navigationBarTitleText": "拓展图书详情"
+			}
+		},
+		{
+			"path": "pages/payTest",
+			"style": {
+				"navigationBarTitleText": "支付测试"
+			}
+		},
+		{
+			"path": "pages/userProfile",
+			"style": {
+				"navigationBarTitleText": "授权昵称头像"
+			}
+		},
+		{
+			"path": "pages/complain",
+			"style": {
+				"navigationBarTitleText": "吐槽反馈"
+			}
+		},
+		{
+			"path": "pages/inviteCode",
+			"style": {
+				"navigationBarTitleText": "邀请码"
+			}
+		},
+		{
+			"path": "pages/addFamilyTwo",
+			"style": {
+				"navigationBarTitleText": "添加家人"
+			}
+		},
+		{
+			"path": "pages/linkWeb",
+			"style": {
+				"navigationBarTitleText": "学习云平台"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "助力成功系统",
+		"navigationBarBackgroundColor": "#63d4fd",
+		"backgroundColor": "#63d4fd",
+		"enablePullDownRefresh": true
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#54c1fc",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/tabs/index",
+				"iconPath": "static/images/tabs/tab-icon-1.png",
+				"selectedIconPath": "static/images/tabs/tab-icon-1-active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabs/parent",
+				"iconPath": "static/images/tabs/tab-icon-2.png",
+				"selectedIconPath": "static/images/tabs/tab-icon-2-active.png",
+				"text": "家长"
+			},
+			{
+				"pagePath": "pages/tabs/student",
+				"iconPath": "static/images/tabs/tab-icon-3.png",
+				"selectedIconPath": "static/images/tabs/tab-icon-3-active.png",
+				"text": "学生"
+			},
+			{
+				"pagePath": "pages/tabs/personal",
+				"iconPath": "static/images/tabs/tab-icon-4.png",
+				"selectedIconPath": "static/images/tabs/tab-icon-4-active.png",
+				"text": "我的"
+			}
+		]
+	}
+}

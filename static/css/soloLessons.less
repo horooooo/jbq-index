@@ -1,0 +1,72 @@
+@import "include/base";
+.solo-lessons{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: #212426;
+	.list{
+		width: 100%;
+		float: left;
+		.flex();
+	}
+	.circle{
+		margin-top: 150px;
+		position: relative;
+		.date{
+			margin-top: 20px;
+			position: absolute;
+			top: 80px;
+		}
+	}
+	.button{
+		view{
+			width: 50%;
+			float: left;
+			text-align: center;
+			button{
+				width: 150px;
+				border-radius: 8px;
+				border:1px solid #FFFFFF;
+				background: #efefef;
+				font-size: 12px;
+				height: 35px;
+				line-height: 35px;
+				color: #FFFFFF;
+				&::after{ border: none;}
+				margin-top: 20px;
+			}
+		}
+	}
+	.music-icon{
+		position: absolute;
+		left: 15px;
+		bottom: 30px;
+		img{
+			width: 50px;
+			height: 50px;
+		}
+	}
+	.upload-button{
+		width: 100%;
+		float: left;
+		margin-top: 20px;
+		view{
+			width: 100%;
+			float: left;
+			text-align: center;
+			button{
+				width: 300px;
+				border-radius: 8px;
+				border:none;
+				background: #efefef;
+				font-size: 12px;
+				height: 35px;
+				line-height: 35px;
+				color: #565656;
+				&::after{ border: none;}
+			}
+		}
+	}
+}

@@ -1,0 +1,104 @@
+@import 'include/base';
+.learning{
+	overflow-x: hidden;
+	.header{
+		width: 100%;
+		float: left;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+	}
+	.steps{
+		width: 100%;
+		float: left;
+		margin-top: 20px;
+	}
+	.title{
+		width: 100%;
+		float: left;
+		margin: 15px 0;
+		.flex();
+		text{
+			margin-right: 10px;
+			font-weight: 600;
+		}
+	}
+	.step-content{
+		width: 100%;
+		float: left;
+		margin: 15px 0;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.step-title{
+			
+		}
+		.input-list{
+			width: 100%;
+			.list{
+				margin-top: 8px;
+				font-size: 12px;
+				.flex();
+				text{
+					width: 50px;
+					margin-right: 10px;
+					text-align: center;
+				}
+				input{
+					width: 200px;
+				}
+			}
+		}
+	}
+	.step-button{
+		width: 100%;
+		float: left;
+		margin: 15px 0;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.flex();
+		button{
+			margin-right: 10px;
+		}
+	}
+	input{
+		border:none;
+		border-radius: 20px;
+		height: 20px;
+		padding-left: 8px;
+		background: #eeeeee;
+		font-size: 12px;
+	}
+	.json-list{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		background: #FFFFFF;
+		z-index: 9999;
+		overflow:auto;
+		.list{
+			width: 100%;
+			float: left;
+			.title{
+				width: 100%;
+				float: left;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			.content{
+				width: 100%;
+				float: left;
+				font-size: 14px;
+				padding: 3px 20px;
+				.label{
+					width: 100px;
+					display: inline-block;
+				}
+				.value{
+					color: #2084b9;
+				}
+			}
+		}
+	}
+}
