@@ -43,8 +43,8 @@
 						<h2>昵称：{{userInfo.name}}</h2>
 						<h2>等级：VIP</h2>
 						<h2>称号：新手小白</h2>
-						<h2>积分：{{userInfo.jifen}}分</h2>
-						<h2>牛盾币：{{userInfo.umoney}}</h2>
+						<h2>积分：{{CurrencyJifen}}分</h2>
+						<h2>牛盾币：{{CurrencyMoney}}</h2>
 						<!-- <view class="btn">
 							<u-button   type="warning" size="medium" class="btn" shape="circle">点击查看</u-button>
 						</view> -->
@@ -134,6 +134,7 @@
 		},
 		created() {
 			// console.log(this.$store.state.userInfo)
+			this.getActivityIs(1)
 		},
 		onLoad(option) {
 			if(option.shareCode){
@@ -181,48 +182,48 @@
 				url: '/pages/tabs/student'
 				});
 			},
-			// getActivityIs:function(id){
-			// 	let that = this
-			// 	let data = {}
-			// 	let header = {
-			// 		'content-type': 'application/x-www-form-urlencoded',
-			// 		'Authorization': 'Bearer ' + this.$store.state.token
-			// 	}
-			// 	this.$req.doRequest('GET', '/CZConfig/isget/'+id, data, header).then(
-			// 			res => {
-			// 				// 获得数据
-			// 				if(res.msg != '已参与'){
-			// 					this.getActivity(id)
-			// 				}
-			// 				console.log(res)
-			// 			})
-			// 		.catch(res => {
-			// 			console.log(res);
-			// 		});
-			// },
+			getActivityIs:function(id){
+				let that = this
+				let data = {}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/CZConfig/isget/'+id, data, header).then(
+						res => {
+							// 获得数据
+							if(res.msg != '已参与'){
+								this.getActivity(id)
+							}
+							console.log(res)
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
 			intoUrl: function(url) {
 				uni.navigateTo({
 					url: '/pages/'+ url,
 				});
 			},
-			// getActivity:function(id){
-			// 	let that = this
-			// 	let data = {}
-			// 	let header = {
-			// 		'content-type': 'application/x-www-form-urlencoded',
-			// 		'Authorization': 'Bearer ' + this.$store.state.token
-			// 	}
-			// 	this.$req.doRequest('GET', '/CZConfig/get/'+id, data, header).then(
-			// 			res => {
-			// 				// 获得数据
-			// 				this.CurrencyMoney = data.jinbi
-			// 				this.CurrencyJifen = data.jifen
-			// 				this.showCurrencyClick()
-			// 			})
-			// 		.catch(res => {
-			// 			console.log(res);
-			// 		});
-			// },
+			getActivity:function(id){
+				let that = this
+				let data = {}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/CZConfig/get/'+id, data, header).then(
+						res => {
+							// 获得数据
+							this.CurrencyMoney = data.jinbi
+							this.CurrencyJifen = data.jifen
+							this.showVip = true
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
 		}
 	}
 </script>

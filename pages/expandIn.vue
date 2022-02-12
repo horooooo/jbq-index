@@ -52,7 +52,7 @@
 			</view>
 		</view>
 		<ul>
-			<li v-for="(item,index) in bookList2" :key="index" @click="mp3Page(item.Id)">{{item.FTitle}}</li>
+			<li v-for="(item,index) in bookList2" :key="index" @click="goPage(item.Id)">{{item.FTitle}}</li>
 		</ul>
 	</view>
 </template>
@@ -138,15 +138,16 @@
 					}
 				}
 			},
-			bookPage: function(id) {
-				this.$u.route({
-					url: 'pages/book?id='+id,
-				})
-			},
-			mp3Page: function(id) {
-				this.$u.route({
-					url: 'pages/mp3?id='+id,
-				})
+			goPage:function(id){
+				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3){
+					this.$u.route({
+						url: 'pages/book?id='+id,
+					})
+				} else{
+					this.$u.route({
+						url: 'pages/mp3?id='+id,
+					})
+				}
 			},
 			onShareAppMessage(){
 			},
