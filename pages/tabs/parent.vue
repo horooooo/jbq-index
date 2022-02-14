@@ -110,45 +110,63 @@
 			<view class="tz" v-show="mp3TypeValue == 1">
 				<view class="box" @click="gototzin(1)">
 					<img :src="imgUrl + '/rulinwaishi.jpg'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>儒林外史</h2>
 				</view>
 				<view class="box" @click="gototzin(2)">
 					<img :src="imgUrl + '/zhaohuaxishi.png'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>朝花夕拾</h2>
 				</view>
 				<view class="box" @click="gototzin(3)">
 					<img :src="imgUrl + '/feiniaoji.png'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>飞鸟集</h2>
+				</view>
+				<view class="box" @click="gototzin(8)">
+					<img :src="imgUrl + '/dey.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>窦娥冤</h2>
+				</view>
+				<view class="box" @click="gototzin(9)">
+					<img :src="imgUrl + '/lbxplj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>鲁滨逊漂流记</h2>
+				</view>
+				<view class="box" @click="gototzin(10)">
+					<img :src="imgUrl + '/whkl.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>文化苦旅</h2>
 				</view>
 			</view>
 			<view class="tz" v-show="mp3TypeValue == 2">
 				<view class="box" @click="gototzin(4)">
 					<img :src="imgUrl + '/rulinwaishi.jpg'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>儒林外史</h2>
 				</view>
 				<view class="box" @click="gototzin(5)">
 					<img :src="imgUrl + '/zhaohuaxishi.png'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>朝花夕拾</h2>
 				</view>
 				<view class="box" @click="gototzin(6)">
 					<img :src="imgUrl + '/gtszylcd.jpg'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>钢铁是怎样炼成的</h2>
 				</view>
 				<view class="box" @click="gototzin(7)">
 					<img :src="imgUrl + '/ltxz.jpg'" class="img" alt="">
-					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="70" class="c">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>骆驼祥子</h2>
 				</view>

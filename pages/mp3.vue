@@ -5,6 +5,7 @@
 			<img v-if="mp3.Orby == 5" :src="imgUrl + '/zhaohuaxishi.png'" class="img" alt="">
 			<img v-if="mp3.Orby == 6" :src="imgUrl + '/gtszylcd.jpg'" class="img" alt="">
 			<img v-if="mp3.Orby == 7" :src="imgUrl + '/ltxz.jpg'" class="img" alt="">
+			<img v-if="mp3.Orby == 8" :src="imgUrl + '/ltxz.jpg'" class="img" alt="">
 		</p>
 		<p style="margin-top: 40px;font-weight: 600;font-size: 16px;">{{mp3.Title}}</p>
 		<p style="margin-top: 10px;color: #777777;margin-bottom: 40px;">{{mp3.FTitle}}</p>

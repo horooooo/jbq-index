@@ -51,6 +51,27 @@
 				<p>描述了20世纪20年代军阀混战时期人力车夫的悲惨命运。祥子是旧社会劳苦大众的代表人物。</p>
 			</view>
 		</view>
+		<view v-if="bookId == 8">
+			<view class="title">窦娥冤</view>
+			<view class="c">
+				<img :src="imgUrl + '/dey.jpg'" class="img" alt="">
+				<p>窦娥冤是元代戏曲家关汉卿创作的杂剧，反映了广大人民伸张正义、惩治邪恶的愿望</p>
+			</view>
+		</view>
+		<view v-if="bookId == 9">
+			<view class="title">鲁滨逊漂流记</view>
+			<view class="c">
+				<img :src="imgUrl + '/lbxplj.jpg'" class="img" alt="">
+				<p>窦娥冤是元代戏曲家关汉卿创作的杂剧，反映了广大人民伸张正义、惩治邪恶的愿望</p>
+			</view>
+		</view>
+		<view v-if="bookId == 10">
+			<view class="title">文化苦旅</view>
+			<view class="c">
+				<img :src="imgUrl + '/whkl.jpg'" class="img" alt="">
+				<p>《文化苦旅》是当代学者、作家余秋雨的一部散文集。于1992年首次出版</p>
+			</view>
+		</view>
 		<ul>
 			<li v-for="(item,index) in bookList2" :key="index" @click="goPage(item.Id)">{{item.FTitle}}</li>
 		</ul>
@@ -139,7 +160,7 @@
 				}
 			},
 			goPage:function(id){
-				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3){
+				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3 || this.bookId == 8 || this.bookId == 9 || this.bookId == 10){
 					this.$u.route({
 						url: 'pages/book?id='+id,
 					})
