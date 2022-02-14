@@ -134,7 +134,6 @@
 		},
 		created() {
 			// console.log(this.$store.state.userInfo)
-			this.getActivityIs(1)
 		},
 		onLoad(option) {
 			if(option.shareCode){
@@ -152,6 +151,7 @@
 			isLogin: function() {
 				if (this.$store.state.loginIs) {
 					global.countMin()
+					this.getActivityIs(1)
 				}
 			},
 			getActivityCode:function(code){
