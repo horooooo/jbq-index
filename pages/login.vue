@@ -60,6 +60,13 @@
 				}
 			})
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			getUserProfile: function() {
 				let userInfo = ''

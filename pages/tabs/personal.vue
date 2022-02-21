@@ -24,7 +24,7 @@
 						<button>签到</button>
 					</navigator>
 					<br>
-					<button @tap="intoUrl('vip')" style="margin-top: 5px;">立即充值</button>
+					<button @tap="intoUrl('vip')" style="margin-top: 5px;" v-show="vipSwitch != 'hide'">立即充值</button>
 				</view>
 			</view>
 			<view class="bottom">
@@ -98,6 +98,7 @@
 				memberTips:false,
 				userInfo:this.$store.state.userInfo,
 				isvip:this.$store.state.isvip,
+				vipSwitch:this.$store.state.switch,
 			}
 		},
 		created() {
@@ -105,6 +106,13 @@
 			console.log(this.$store.state.isvip)
 		},
 		onLoad() {},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			isLogin: function() {
 				if (!this.$store.state.loginIs) {

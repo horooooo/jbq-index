@@ -8,7 +8,7 @@
 				</navigator>
 			</view>
 		</view>
-		<view class="header-img" style="height: 170px;">
+		<view class="header-img" style="height: 170px;" v-show="VideoSwitch != 'hide'">
 			<video :autoplay="false" :show-fullscreen-btn="false" play-btn-position="center" :controls="true"
 				:src="rootUrl + '/wx-app/mp3/index_advertisement_1.mp4'" style="width: 90%;height: 170px;"></video>
 		</view>
@@ -127,6 +127,7 @@
 				rootUrl:this.$store.state.rootUrl,
 				CurrencyMoney:0,
 				CurrencyJifen:0,
+				VideoSwitch:'hide',
 			}
 		},
 		components: {
@@ -134,6 +135,7 @@
 		},
 		created() {
 			// console.log(this.$store.state.userInfo)
+			this.getMediaSwith()
 		},
 		onLoad(option) {
 			if(option.shareCode){
@@ -144,6 +146,13 @@
 				this.getActivityCode(this.$store.state.shareCode)
 			}
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+	        	title: "刷新成功",
+	        	icon: "none"
+	        });
+		},
 		methods: {
 			showCurrencyClick:function(){
 				this.$refs.jiangli.showCurrencyClick();
@@ -153,6 +162,22 @@
 					global.countMin()
 					this.getActivityIs(1)
 				}
+			},
+			getMediaSwith:function(){
+				let that = this
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Advertisement/Isshow', {}, header).then(
+						res => {
+							// 获得数据
+							that.$store.commit('pushSwitch', res.response)
+							this.VideoSwitch = res.response
+						})
+					.catch(res => {
+						console.log(res);
+					});
 			},
 			getActivityCode:function(code){
 				let that = this

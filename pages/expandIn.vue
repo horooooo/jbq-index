@@ -109,6 +109,13 @@
 		onLoad(option) {
 			this.bookId = option.id
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			getLmValue: function() {
 				let that = this

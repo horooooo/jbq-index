@@ -36,6 +36,13 @@
 		},
 		onLoad() {
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			getActivity:function(){
 				let that = this

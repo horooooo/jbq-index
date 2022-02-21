@@ -89,6 +89,13 @@
 			this.lessonsData.num = option.num
 			this.timestamp = option.num * 60
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			start: function() {
 				this.timestamp = this.lessonsData.num * 60

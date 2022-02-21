@@ -190,7 +190,7 @@
 	export default {
 		data() {
 			return {
-				tabs: ['作业', '文章', '视频', '拓展'],
+				tabs: ['作业', '文章', '拓展'],
 				// tabs: ['作业', '文章', '视频'],
 				tabsIndex: 0,
 				praiseImg: this.$store.state.imgUrl + '/icon/praise-1.png',
@@ -248,6 +248,16 @@
 			if(this.$store.state.shareCode){
 				this.getActivityCode(this.$store.state.shareCode)
 			}
+			if(this.$store.state.switch != 'hide'){
+				this.tabs = ['作业', '文章', '视频', '拓展']
+			}
+		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
 		},
 		methods: {
 			onShareAppMessage(res){

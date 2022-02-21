@@ -9,13 +9,15 @@
 		{
 			"path": "pages/login",
 			"style": {
-				"navigationBarTitleText": "登录"
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/tabs/parent",
 			"style": {
-				"navigationBarTitleText": "家长"
+				"navigationBarTitleText": "家长",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
@@ -24,164 +26,191 @@
 		{
 			"path": "pages/tabs/personal",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/article",
 			"style": {
-				"navigationBarTitleText": "文章"
+				"navigationBarTitleText": "文章",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/video",
 			"style": {
-				"navigationBarTitleText": "视频"
+				"navigationBarTitleText": "视频",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/book",
 			"style": {
-				"navigationBarTitleText": "课外读物"
+				"navigationBarTitleText": "课外读物",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/mp3",
 			"style": {
-				"navigationBarTitleText": "电子音频"
+				"navigationBarTitleText": "电子音频",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/learning",
 			"style": {
-				"navigationBarTitleText": "课程学习"
+				"navigationBarTitleText": "课程学习",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/method",
 			"style": {
-				"navigationBarTitleText": "学习方法"
+				"navigationBarTitleText": "学习方法",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/soloLessons",
 			"style": {
-				"navigationBarTitleText": "自习室"
+				"navigationBarTitleText": "自习室",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/integral",
 			"style": {
-				"navigationBarTitleText": "积分明细"
+				"navigationBarTitleText": "积分明细",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/achievement",
 			"style": {
-				"navigationBarTitleText": "成就"
+				"navigationBarTitleText": "成就",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/personalData",
 			"style": {
-				"navigationBarTitleText": "我的信息"
+				"navigationBarTitleText": "我的信息",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/vip",
 			"style": {
-				"navigationBarTitleText": "会员充值"
+				"navigationBarTitleText": "会员充值",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/friendRequest",
 			"style": {
-				"navigationBarTitleText": "好友请求"
+				"navigationBarTitleText": "好友请求",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/sign",
 			"style": {
-				"navigationBarTitleText": "签到"
+				"navigationBarTitleText": "签到",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/shopping/sign",
 			"style": {
-				"navigationBarTitleText": "商城"
+				"navigationBarTitleText": "商城",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/shopping/mallSearch",
 			"style": {
-				"navigationBarTitleText": "商城搜索"
+				"navigationBarTitleText": "商城搜索",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/shopping/searchList",
 			"style": {
-				"navigationBarTitleText": "搜索页"
+				"navigationBarTitleText": "搜索页",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/shopping/shoppingCart",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh":true
 			}
 		},
 
 		{
 			"path": "pages/shopping/productDetails",
 			"style": {
-				"navigationBarTitleText": "商品详情"
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/expandIn",
 			"style": {
-				"navigationBarTitleText": "拓展图书详情"
+				"navigationBarTitleText": "拓展图书详情",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/payTest",
 			"style": {
-				"navigationBarTitleText": "支付测试"
+				"navigationBarTitleText": "支付测试",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/userProfile",
 			"style": {
-				"navigationBarTitleText": "授权昵称头像"
+				"navigationBarTitleText": "授权昵称头像",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/complain",
 			"style": {
-				"navigationBarTitleText": "吐槽反馈"
+				"navigationBarTitleText": "吐槽反馈",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/inviteCode",
 			"style": {
-				"navigationBarTitleText": "邀请码"
+				"navigationBarTitleText": "邀请码",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/addFamilyTwo",
 			"style": {
-				"navigationBarTitleText": "添加家人"
+				"navigationBarTitleText": "添加家人",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
 			"path": "pages/linkWeb",
 			"style": {
-				"navigationBarTitleText": "学习云平台"
+				"navigationBarTitleText": "学习云平台",
+				"enablePullDownRefresh":true
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "助力成功系统",
+		"enablePullDownRefresh":true,
 		"navigationBarBackgroundColor": "#63d4fd",
 		"backgroundColor": "#63d4fd",
 		"enablePullDownRefresh": true

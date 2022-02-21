@@ -47,6 +47,13 @@
 			console.log(this.userInfo)
 		},
 		onLoad() {},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			onShareAppMessage(){
 			},

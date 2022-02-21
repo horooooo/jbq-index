@@ -19,6 +19,7 @@ const store = new Vuex.Store({
 		money2:'', // 银盾币
 		money3:'', // 金盾币
 		isvip:false,
+		switch:false,
 	},
 	plugins: [createPersistedState({storage: localStorage})],
     mutations: {
@@ -51,6 +52,9 @@ const store = new Vuex.Store({
 		},
 		pushIsVip(state,e){
 		    state.isvip = e
+		},
+		pushSwitch(state,e){
+		    state.switch = e
 		},
 	},
     actions: {

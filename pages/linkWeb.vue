@@ -18,6 +18,13 @@
 		onLoad(option) {
 			this.url = option.url
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			onShareAppMessage(){
 			},

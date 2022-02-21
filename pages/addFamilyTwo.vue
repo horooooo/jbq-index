@@ -63,6 +63,13 @@
 		onLoad() {
 			this.getFamily()
 		},
+		onPullDownRefresh() {
+		    uni.stopPullDownRefresh()
+		    uni.showToast({
+		    	title: "刷新成功",
+		    	icon: "none"
+		    });
+		},
 		methods: {
 			showCurrencyClick:function(){
 				this.$refs.jiangli.showCurrencyClick();
