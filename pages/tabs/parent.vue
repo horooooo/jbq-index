@@ -144,6 +144,54 @@
 					</u-line-progress>
 					<h2>文化苦旅</h2>
 				</view>
+				<view class="box" @click="gototzin(11)">
+					<img :src="imgUrl + '/mrz.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>名人传</h2>
+				</view>
+				<view class="box" @click="gototzin(12)">
+					<img :src="imgUrl + '/snwtzfn.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>少年维持的烦恼</h2>
+				</view>
+				<view class="box" @click="gototzin(13)">
+					<img :src="imgUrl + '/xwz.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>小王子</h2>
+				</view>
+				<view class="box" @click="gototzin(14)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(1)</h2>
+				</view>
+				<view class="box" @click="gototzin(15)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(2)</h2>
+				</view>
+				<view class="box" @click="gototzin(16)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(3)</h2>
+				</view>
+				<view class="box" @click="gototzin(17)">
+					<img :src="imgUrl + '/hdlwl1.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>海底两万里(1)</h2>
+				</view>
+				<view class="box" @click="gototzin(18)">
+					<img :src="imgUrl + '/hdlwl2.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>海底两万里(2)</h2>
+				</view>
 			</view>
 			<view class="tz" v-show="mp3TypeValue == 2">
 				<view class="box" @click="gototzin(4)">

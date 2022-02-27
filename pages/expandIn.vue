@@ -62,7 +62,7 @@
 			<view class="title">鲁滨逊漂流记</view>
 			<view class="c">
 				<img :src="imgUrl + '/lbxplj.jpg'" class="img" alt="">
-				<p>窦娥冤是元代戏曲家关汉卿创作的杂剧，反映了广大人民伸张正义、惩治邪恶的愿望</p>
+				<p>《鲁滨逊漂流记》是英国作家丹尼尔·笛福的一部长篇小说。该书首次出版于1719年4月25日。</p>
 			</view>
 		</view>
 		<view v-if="bookId == 10">
@@ -70,6 +70,62 @@
 			<view class="c">
 				<img :src="imgUrl + '/whkl.jpg'" class="img" alt="">
 				<p>《文化苦旅》是当代学者、作家余秋雨的一部散文集。于1992年首次出版</p>
+			</view>
+		</view>
+		<view v-if="bookId == 11">
+			<view class="title">名人传</view>
+			<view class="c">
+				<img :src="imgUrl + '/mrz.jpg'" class="img" alt="">
+				<p>《名人传》，是由19世纪末20世纪初法国著名的批判现实主义作家罗曼·罗兰创作的人物传记作品</p>
+			</view>
+		</view>
+		<view v-if="bookId == 12">
+			<view class="title">少年维持的烦恼</view>
+			<view class="c">
+				<img :src="imgUrl + '/snwtzfn.jpg'" class="img" alt="">
+				<p>《少年维特的烦恼》是德国作家歌德创作的中篇小说。该书于1774年秋天在莱比锡书籍展览会上面世，并在那里成了畅销书</p>
+			</view>
+		</view>
+		<view v-if="bookId == 13">
+			<view class="title">小王子</view>
+			<view class="c">
+				<img :src="imgUrl + '/xwz.jpg'" class="img" alt="">
+				<p>《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 14">
+			<view class="title">平凡的世界(1)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 15">
+			<view class="title">平凡的世界(2)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 16">
+			<view class="title">平凡的世界(3)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 17">
+			<view class="title">海底两万里(1)</view>
+			<view class="c">
+				<img :src="imgUrl + '/hdlwl1.jpg'" class="img" alt="">
+				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 18">
+			<view class="title">海底两万里(2)</view>
+			<view class="c">
+				<img :src="imgUrl + '/hdlwl2.jpg'" class="img" alt="">
+				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
 			</view>
 		</view>
 		<ul>
@@ -167,7 +223,8 @@
 				}
 			},
 			goPage:function(id){
-				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3 || this.bookId == 8 || this.bookId == 9 || this.bookId == 10){
+				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3 || this.bookId == 8 || this.bookId == 9 || this.bookId == 10 || this.bookId == 11 || this.bookId == 12
+				 || this.bookId == 13 || this.bookId == 14 || this.bookId == 15 || this.bookId == 16 || this.bookId == 17 || this.bookId == 18){
 					this.$u.route({
 						url: 'pages/book?id='+id,
 					})
