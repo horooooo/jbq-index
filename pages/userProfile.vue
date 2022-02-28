@@ -76,6 +76,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		}
 	}
 </script>

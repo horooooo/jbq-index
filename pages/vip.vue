@@ -48,9 +48,9 @@
 				</view>
 			</view> -->
 		</view>
-		<view class="tips">
+		<!-- <view class="tips">
 			会员到期前一天自动续费一个月，可随时关闭
-		</view>
+		</view> -->
 		<!-- <view class="tips">
 			请扫码二维码付费，付费后请保存付款记录联系工作人员
 		</view>
@@ -170,6 +170,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		}
 	}
 </script>

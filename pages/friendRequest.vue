@@ -132,6 +132,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		}
 	}
 </script>

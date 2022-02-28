@@ -178,6 +178,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		}
 	}
 </script>

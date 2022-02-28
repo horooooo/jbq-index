@@ -15,7 +15,7 @@
 					</view>
 					<view class="font">
 						<p>{{item.User}}</p>
-						<p>{{item.content}}</p>
+						<p style="color:#000000;">{{item.content}}</p>
 					</view>
 					<!-- <view class="operate">
 						<img :src="imgUrl + '/icon/dianzan.png'" alt="">
@@ -235,6 +235,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		},
 	}
 </script>

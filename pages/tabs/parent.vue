@@ -218,6 +218,54 @@
 					</u-line-progress>
 					<h2>骆驼祥子</h2>
 				</view>
+				<view class="box" @click="gototzin(19)">
+					<img :src="imgUrl + '/mrz.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>名人传</h2>
+				</view>
+				<view class="box" @click="gototzin(20)">
+					<img :src="imgUrl + '/snwtzfn.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>少年维持的烦恼</h2>
+				</view>
+				<view class="box" @click="gototzin(21)">
+					<img :src="imgUrl + '/xwz.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>小王子</h2>
+				</view>
+				<view class="box" @click="gototzin(22)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(1)</h2>
+				</view>
+				<view class="box" @click="gototzin(23)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(2)</h2>
+				</view>
+				<view class="box" @click="gototzin(24)">
+					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>平凡的世界(3)</h2>
+				</view>
+				<view class="box" @click="gototzin(25)">
+					<img :src="imgUrl + '/hdlwl1.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>海底两万里(1)</h2>
+				</view>
+				<view class="box" @click="gototzin(26)">
+					<img :src="imgUrl + '/hdlwl2.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>海底两万里(2)</h2>
+				</view>
 			</view>
 		</view>
 		<view class="swiper" v-show="swiperShow == true">
@@ -308,6 +356,8 @@
 		    });
 		},
 		methods: {
+			onShareTimeline(){
+			},
 			onShareAppMessage(res){
 				if(res.from == 'button'){
 					return{

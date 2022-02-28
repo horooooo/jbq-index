@@ -131,7 +131,6 @@
 				});
 			},
 			onShareAppMessage(res){
-				console.log(this.userInfo.uID)
 				if(res.from == 'button'){
 					return{
 						title:'邀请码分享',
@@ -139,6 +138,8 @@
 						type:0,
 					}
 				}
+			},
+			onShareTimeline(){
 			},
 		}
 	}

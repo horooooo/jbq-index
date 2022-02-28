@@ -39,6 +39,7 @@
 		methods: {
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		}
 	}
 </script>

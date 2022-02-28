@@ -381,6 +381,8 @@
 					}
 				}
 			},
+			onShareTimeline(){
+			},
 			getActivityCode:function(code){
 				let that = this
 				let data = {

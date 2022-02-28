@@ -138,6 +138,7 @@
 			this.getMediaSwith()
 		},
 		onLoad(option) {
+	
 			if(option.shareCode){
 				this.$store.commit('pushShareCode',option.shareCode)
 			}
@@ -154,6 +155,9 @@
 	        });
 		},
 		methods: {
+			onShareAppMessage(){},
+			onShareTimeline(){
+			},
 			showCurrencyClick:function(){
 				this.$refs.jiangli.showCurrencyClick();
 			},

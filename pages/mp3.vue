@@ -60,6 +60,7 @@
 			},
 			onShareAppMessage(){
 			},
+			onShareTimeline(){},
 		},
 
 	}

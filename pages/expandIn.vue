@@ -128,6 +128,62 @@
 				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
 			</view>
 		</view>
+		<view v-if="bookId == 19">
+			<view class="title">名人传</view>
+			<view class="c">
+				<img :src="imgUrl + '/mrz.jpg'" class="img" alt="">
+				<p>《名人传》，是由19世纪末20世纪初法国著名的批判现实主义作家罗曼·罗兰创作的人物传记作品</p>
+			</view>
+		</view>
+		<view v-if="bookId == 20">
+			<view class="title">少年维持的烦恼</view>
+			<view class="c">
+				<img :src="imgUrl + '/snwtzfn.jpg'" class="img" alt="">
+				<p>《少年维特的烦恼》是德国作家歌德创作的中篇小说。该书于1774年秋天在莱比锡书籍展览会上面世，并在那里成了畅销书</p>
+			</view>
+		</view>
+		<view v-if="bookId == 21">
+			<view class="title">小王子</view>
+			<view class="c">
+				<img :src="imgUrl + '/xwz.jpg'" class="img" alt="">
+				<p>《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 22">
+			<view class="title">平凡的世界(1)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 23">
+			<view class="title">平凡的世界(2)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 24">
+			<view class="title">平凡的世界(3)</view>
+			<view class="c">
+				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
+				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 25">
+			<view class="title">海底两万里(1)</view>
+			<view class="c">
+				<img :src="imgUrl + '/hdlwl1.jpg'" class="img" alt="">
+				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 26">
+			<view class="title">海底两万里(2)</view>
+			<view class="c">
+				<img :src="imgUrl + '/hdlwl2.jpg'" class="img" alt="">
+				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
+			</view>
+		</view>
 		<ul>
 			<li v-for="(item,index) in bookList2" :key="index" @click="goPage(item.Id)">{{item.FTitle}}</li>
 		</ul>
@@ -236,7 +292,7 @@
 			},
 			onShareAppMessage(){
 			},
-
+			onShareTimeline(){},
 		},
 
 	}
