@@ -42,13 +42,13 @@ const store = new Vuex.Store({
 		    state.shareCode = e
 		},
 		pushMoney1(state,e){
-		    state.money1 += e
+		    state.money1 = e
 		},
 		pushMoney2(state,e){
-		    state.money2 += e
+		    state.money2 = e
 		},
 		pushMoney3(state,e){
-		    state.money3 += e
+		    state.money3 = e
 		},
 		pushIsVip(state,e){
 		    state.isvip = e

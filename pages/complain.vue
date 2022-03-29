@@ -89,6 +89,11 @@
 									this.CurrencyJifen = data.jifen
 									this.showCurrencyClick()
 								}
+								setTimeout(function(){
+									uni.switchTab({
+										url: '/pages/tabs/index',
+									});
+								},2000);
 							}
 						})
 					.catch(res => {

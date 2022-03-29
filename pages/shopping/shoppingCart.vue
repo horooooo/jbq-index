@@ -8,6 +8,9 @@
 				<u-button size="medium" type="warning" style="margin-top: 200px;">去逛逛</u-button>
 			</navigator>
 		</view>
+		<view class="tips" style="margin: 10px;background: #F2F3F5;padding: 10px;">
+			<text>金盾币余额：{{money3}}</text>
+		</view>
 		<!-- 数据列表 -->
 		<view class="cart-list">
 			<view class="cart-item" v-for="(item,index) in goodsList" :key="item.firmId">
@@ -82,7 +85,9 @@
 				selectedAllRowList: [], // 储存一个已经选择的数据
 				selectedAllRowLength: 0, // 已经选择了的数据的长度
 				sumPrice: '0.00', // 总价格
-				modelShow: false
+				modelShow: false,
+				userInfo:this.$store.state.userInfo,
+				money3:this.$store.state.money3,
 			}
 		},
 		created() {
@@ -90,8 +95,36 @@
 		},
 		mounted() {
 			this.getCart()
+			this.RefreshToken()
 		},
 		methods: {
+			RefreshToken:function(){
+				let that = this
+				let data = {
+					token:this.$store.state.token
+				}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Login/RefreshToken', data, header).then(
+						res => {
+							// 获得数据
+							if(res.success){
+								let userInfo = JSON.parse(res.response)
+								that.$store.commit('pushLoginIs', true)
+								that.$store.commit('pushMoney1', userInfo.umoney)
+								that.$store.commit('pushMoney3', userInfo.unum)
+								that.$store.commit('pushIsVip', userInfo.isvip)
+								that.$store.commit('pushToken', userInfo.token)
+								that.$store.commit('pushUserInfo', userInfo)
+								this.userInfo = userInfo
+							}
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
 			getCart() {
 				let that = this;
 				let data = {
@@ -325,6 +358,12 @@
 				let that = this;
 				let arr = that.selectedAllRowList[0].goods
 				let idArr = ''
+				if(this.sumPrice > this.money3){
+					this.$refs.uToast.show({
+						title: '账户余额不足',
+					})
+					return false
+				}
 				for(let index in arr){
 					if(index == (arr.length - 1)){
 						idArr += arr[index].Id
@@ -349,6 +388,7 @@
 								this.$refs.uToast.show({
 									title: res.msg,
 								})
+								this.goodsList = []
 							}
 						})
 					.catch(res => {

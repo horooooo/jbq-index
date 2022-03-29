@@ -347,7 +347,7 @@
 		},
 		created() {
 			this.isLogin()
-			console.log(this.userInfo)
+			this.RefreshToken()
 			// this.reviewPlan()
 		},
 		onLoad(option) {
@@ -372,13 +372,11 @@
 			showCurrencyClick:function(){
 				this.$refs.jiangli.showCurrencyClick();
 			},
-			onShareAppMessage(res){
-				if(res.from == 'button'){
-					return{
-						title:'邀请码分享',
-						path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
-						type:0,
-					}
+			onShareAppMessage(){
+				return{
+					title:'邀请码分享',
+					path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
+					type:0,
 				}
 			},
 			onShareTimeline(){
@@ -395,10 +393,6 @@
 				this.$req.doRequest('GET', '/user/BangUfid', data, header).then(
 						res => {
 							// 获得数据
-							uni.showToast({
-								title: res.msg,
-								icon: "none"
-							});
 							if(res.msg != '已绑定推荐人'){
 								uni.showToast({
 									title: res.msg,
@@ -816,6 +810,33 @@
 									title: "发表失败，请重试",
 									icon: "none"
 								});
+							}
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
+			RefreshToken:function(){
+				let that = this
+				let data = {
+					token:this.$store.state.token
+				}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Login/RefreshToken', data, header).then(
+						res => {
+							// 获得数据
+							if(res.success){
+								let userInfo = JSON.parse(res.response)
+								that.$store.commit('pushLoginIs', true)
+								that.$store.commit('pushMoney1', userInfo.umoney)
+								that.$store.commit('pushMoney3', userInfo.unum)
+								that.$store.commit('pushIsVip', userInfo.isvip)
+								that.$store.commit('pushToken', userInfo.token)
+								that.$store.commit('pushUserInfo', userInfo)
+								this.userInfo = userInfo
 							}
 						})
 					.catch(res => {

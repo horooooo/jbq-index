@@ -13,10 +13,11 @@
 				<li v-for="(item,index) in cznoteData" :key="index">
 					<view>{{index+1}}</view>
 					<view>{{item.endnum}}</view>
-					<view>{{item.Title}}</view>
+					<view style="font-size: 12px;">{{item.Title}}</view>
 				</li>
 			</ul>
 		</view>
+		<view style="margin-top: 10px;font-size: 12px;">*若积分未及时更新请重新登录</view>
 	</view>
 </template>
 

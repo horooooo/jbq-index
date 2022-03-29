@@ -45,6 +45,7 @@
 		},
 		created() {
 			console.log(this.userInfo)
+			this.RefreshToken()
 		},
 		onLoad() {},
 		onPullDownRefresh() {
@@ -55,7 +56,39 @@
 		    });
 		},
 		methods: {
+			RefreshToken:function(){
+				let that = this
+				let data = {
+					token:this.$store.state.token
+				}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Login/RefreshToken', data, header).then(
+						res => {
+							// 获得数据
+							if(res.success){
+								let userInfo = JSON.parse(res.response)
+								that.$store.commit('pushLoginIs', true)
+								that.$store.commit('pushMoney1', userInfo.umoney)
+								that.$store.commit('pushMoney3', userInfo.unum)
+								that.$store.commit('pushIsVip', userInfo.isvip)
+								that.$store.commit('pushToken', userInfo.token)
+								that.$store.commit('pushUserInfo', userInfo)
+								this.userInfo = userInfo
+							}
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
 			onShareAppMessage(){
+				return{
+					title:'邀请码分享',
+					path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
+					type:0,
+				}
 			},
 			onShareTimeline(){},
 		}

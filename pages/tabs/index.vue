@@ -40,7 +40,7 @@
 					<img :src="imgUrl + '/41.gif'" class="img" alt="">
 					<view class="txt">
 						<image :src="userInfo.upic" class="ava" mode=""></image>
-						<h2>昵称：{{userInfo.name}}</h2>
+						<h2>昵称：{{userInfo.name || '用户001'}}</h2>
 						<h2>等级：VIP</h2>
 						<h2>称号：新手小白</h2>
 						<h2>积分：{{CurrencyJifen}}分</h2>
@@ -64,7 +64,7 @@
 				<view class="content">
 					<image :src="imgUrl + '/shopping/ava1.png'"  @tap.stop class="ava" mode=""></image>
 					<view class="text"  @tap.stop>
-						<h2>姓名：{{userInfo.name}}</h2>
+						<h2>姓名：{{userInfo.name || '用户001'}}</h2>
 						<h2>会员状态：VIP</h2>
 						<h2>会员称呼：新手小白</h2>
 						<h2>积分：{{userInfo.jifen}}分</h2>
@@ -128,6 +128,8 @@
 				CurrencyMoney:0,
 				CurrencyJifen:0,
 				VideoSwitch:'hide',
+				testContent:'',
+				code:'',
 			}
 		},
 		components: {
@@ -136,15 +138,17 @@
 		created() {
 			// console.log(this.$store.state.userInfo)
 			this.getMediaSwith()
+			console.log(this.userInfo)
+			console.log(this.$store.state.money1)
 		},
 		onLoad(option) {
-	
 			if(option.shareCode){
 				this.$store.commit('pushShareCode',option.shareCode)
 			}
 			this.isLogin()
 			if(this.$store.state.shareCode){
 				this.getActivityCode(this.$store.state.shareCode)
+				this.code = this.$store.state.shareCode
 			}
 		},
 		onPullDownRefresh() {
@@ -155,7 +159,13 @@
 	        });
 		},
 		methods: {
-			onShareAppMessage(){},
+			onShareAppMessage(){
+				return{
+					title:'邀请码分享',
+					path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
+					type:0,
+				}
+			},
 			onShareTimeline(){
 			},
 			showCurrencyClick:function(){
@@ -163,8 +173,8 @@
 			},
 			isLogin: function() {
 				if (this.$store.state.loginIs) {
-					global.countMin()
 					this.getActivityIs(1)
+					global.countMin()
 				}
 			},
 			getMediaSwith:function(){
@@ -200,6 +210,8 @@
 									title: res.msg,
 									icon: "none"
 								});
+							} else {
+								this.testContent = res
 							}
 						})
 					.catch(res => {
@@ -245,9 +257,12 @@
 				this.$req.doRequest('GET', '/CZConfig/get/'+id, data, header).then(
 						res => {
 							// 获得数据
-							this.CurrencyMoney = data.jinbi
-							this.CurrencyJifen = data.jifen
-							this.showVip = true
+							if(res.success){
+								let data = JSON.parse(res.response)
+								this.CurrencyMoney = data.jinbi
+								this.CurrencyJifen = data.jifen
+								this.showVip = true
+							}
 						})
 					.catch(res => {
 						console.log(res);

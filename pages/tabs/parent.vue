@@ -80,7 +80,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="card" v-if="tabsIndex == 2">
+		<view class="card" v-if="tabsIndex == 3">
 			<view class="video-type">
 				<span v-for="(item,index) in videoTypeList"  :class="{'active':index == videoTypeValue - 1}" @tap="videoTypeValue = item.value">{{item.lable}}</span>
 			</view>
@@ -102,7 +102,7 @@
 				</navigator>
 			</view>
 		</view>
-		<view class="card" v-if="tabsIndex == 3">
+		<view class="card" v-if="tabsIndex == 2">
 			<view class="video-type">
 				<span v-for="(item,index) in mp3TypeList"  :class="{'active':index == mp3TypeValue - 1}" @tap="mp3TypeValue = item.value">{{item.lable}}</span>
 			</view>
@@ -162,7 +162,7 @@
 					</u-line-progress>
 					<h2>小王子</h2>
 				</view>
-				<view class="box" @click="gototzin(14)">
+				<!-- <view class="box" @click="gototzin(14)">
 					<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
 					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
@@ -179,7 +179,7 @@
 					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
 					</u-line-progress>
 					<h2>平凡的世界(3)</h2>
-				</view>
+				</view> -->
 				<view class="box" @click="gototzin(17)">
 					<img :src="imgUrl + '/hdlwl1.jpg'" class="img" alt="">
 					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
@@ -266,6 +266,12 @@
 					</u-line-progress>
 					<h2>海底两万里(2)</h2>
 				</view>
+				<view class="box" @click="gototzin(27)">
+					<img :src="imgUrl + '/whkl.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>文化苦旅</h2>
+				</view>
 			</view>
 		</view>
 		<view class="swiper" v-show="swiperShow == true">
@@ -336,6 +342,7 @@
 			this.isLogin()
 			this.getHomework()
 			this.getLmValue()
+			this.RefreshToken()
 		},
 		onLoad(option) {
 			if(option.shareCode){
@@ -345,8 +352,8 @@
 				this.getActivityCode(this.$store.state.shareCode)
 			}
 			if(this.$store.state.switch != 'hide'){
-				this.tabs = ['作业', '文章', '视频', '拓展']
-			}
+				this.tabs = ['作业', '文章', '拓展', '视频']
+			} 
 		},
 		onPullDownRefresh() {
 		    uni.stopPullDownRefresh()
@@ -358,13 +365,11 @@
 		methods: {
 			onShareTimeline(){
 			},
-			onShareAppMessage(res){
-				if(res.from == 'button'){
-					return{
-						title:'邀请码分享',
-						path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
-						type:0,
-					}
+			onShareAppMessage(){
+				return{
+					title:'邀请码分享',
+					path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
+					type:0,
 				}
 			},
 			getActivityCode:function(code){
@@ -379,10 +384,6 @@
 				this.$req.doRequest('GET', '/user/BangUfid', data, header).then(
 						res => {
 							// 获得数据
-							uni.showToast({
-								title: res.msg,
-								icon: "none"
-							});
 							if(res.msg != '已绑定推荐人'){
 								uni.showToast({
 									title: res.msg,
@@ -425,6 +426,9 @@
 								if(index){
 									this.articleList[index].Isindex = true
 								}
+								this.$refs.uToast.show({
+									title: '点赞成功',
+								})
 							})
 						.catch(res => {
 							console.log(res);
@@ -493,7 +497,7 @@
 				let that = this
 				let data = {
 					page: 1,
-					intPageSize:200,
+					intPageSize:2000,
 				}
 				let header = {
 					'content-type': 'application/x-www-form-urlencoded',
@@ -508,10 +512,12 @@
 									if (list[index].Lmid == 1) {
 										that.articleList.push(list[index])
 									} else if (list[index].Lmid == 2) {
-										that.videoList.push(list[index])
+										that.videoList.push(list[index]) 
 									}
 								}
 							}
+							console.log(that.articleList)
+							console.log(that.videoList)
 						})
 					.catch(res => {
 						console.log(res);
@@ -561,6 +567,33 @@
 						res => {
 							// 获得数据
 							that.commentList = res.response.data
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
+			RefreshToken:function(){
+				let that = this
+				let data = {
+					token:this.$store.state.token
+				}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Login/RefreshToken', data, header).then(
+						res => {
+							// 获得数据
+							if(res.success){
+								let userInfo = JSON.parse(res.response)
+								that.$store.commit('pushLoginIs', true)
+								that.$store.commit('pushMoney1', userInfo.umoney)
+								that.$store.commit('pushMoney3', userInfo.unum)
+								that.$store.commit('pushIsVip', userInfo.isvip)
+								that.$store.commit('pushToken', userInfo.token)
+								that.$store.commit('pushUserInfo', userInfo)
+								this.userInfo = userInfo
+							}
 						})
 					.catch(res => {
 						console.log(res);

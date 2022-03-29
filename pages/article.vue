@@ -11,10 +11,10 @@
 		<view class="user-comment">
 			<view class="comment-list" v-for="(item, index) in commentList">
 				<view class="img">
-					<img :src="item.Logo" alt="">
+					<img :src="item.User.upic" alt="">
 				</view>
 				<view class="font">
-					<p>{{item.User}}</p>
+					<p>{{item.User.name}}</p>
 					<p>{{item.content}}</p>
 				</view>
 				<!-- <view class="operate">
@@ -62,12 +62,12 @@
 						text: '评论',
 						active: false
 					},
-					{
-						iconPath: this.$store.state.imgUrl + '/icon/fenxiang.png',
-						selectedIconPath: this.$store.state.imgUrl + '/icon/fenxiang.png',
-						text: '转发',
-						active: false
-					}
+					// {
+					// 	iconPath: this.$store.state.imgUrl + '/icon/fenxiang.png',
+					// 	selectedIconPath: this.$store.state.imgUrl + '/icon/fenxiang.png',
+					// 	text: '转发',
+					// 	active: false
+					// }
 				],
 				horizontal: 'right',
 				vertical: 'bottom',

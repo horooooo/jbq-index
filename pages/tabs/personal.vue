@@ -57,7 +57,7 @@
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-9.png'" alt=""><br>售后</view>
 			</view> -->
 			<view class="list">
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-10.png'" alt=""><br>客服</view>
+				<view class="option"><img :src="imgUrl + '/icon/person-icon-10.png'" alt="" @tap="intoUrl('serverCode')"><br>客服</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-11.png'" alt="" @tap="intoUrl('personalData')"><br>设置</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-12.png'" alt="" @tap="intoUrl('addFamilyTwo')"><br>家人</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-13.png'" alt="" @tap="intoUrl('inviteCode')"><br>邀请码</view>
@@ -103,7 +103,7 @@
 		},
 		created() {
 			this.isLogin()
-			console.log(this.$store.state.isvip)
+			this.RefreshToken()
 		},
 		onLoad() {},
 		onPullDownRefresh() {
@@ -130,13 +130,38 @@
 					url: '/pages/'+ url,
 				});
 			},
-			onShareAppMessage(res){
-				if(res.from == 'button'){
-					return{
-						title:'邀请码分享',
-						path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
-						type:0,
-					}
+			RefreshToken:function(){
+				let that = this
+				let data = {
+					token:this.$store.state.token
+				}
+				let header = {
+					'content-type': 'application/x-www-form-urlencoded',
+					'Authorization': 'Bearer ' + this.$store.state.token
+				}
+				this.$req.doRequest('GET', '/Login/RefreshToken', data, header).then(
+						res => {
+							// 获得数据
+							if(res.success){
+								let userInfo = JSON.parse(res.response)
+								that.$store.commit('pushLoginIs', true)
+								that.$store.commit('pushMoney1', userInfo.umoney)
+								that.$store.commit('pushMoney3', userInfo.unum)
+								that.$store.commit('pushIsVip', userInfo.isvip)
+								that.$store.commit('pushToken', userInfo.token)
+								that.$store.commit('pushUserInfo', userInfo)
+								this.userInfo = userInfo
+							}
+						})
+					.catch(res => {
+						console.log(res);
+					});
+			},
+			onShareAppMessage(){
+				return{
+					title:'邀请码分享',
+					path:'/pages/tabs/index?shareCode=JBQ' + this.userInfo.uID,
+					type:0,
 				}
 			},
 			onShareTimeline(){

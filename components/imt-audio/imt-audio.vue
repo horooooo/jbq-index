@@ -61,7 +61,7 @@
 		},
 		created() {
 			if(this.src){
-				this.audio.src = this.$store.state.ftpUrl + '/wx-app/mp3/862272.mp3'
+				this.audio.src = this.$store.state.rootUrl + '/wx-app/mp3/862272.mp3'
 				this.autoplay && this.play()
 			}
 			this.audio.obeyMuteSwitch = false

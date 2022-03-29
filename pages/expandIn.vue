@@ -93,7 +93,7 @@
 				<p>《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。</p>
 			</view>
 		</view>
-		<view v-if="bookId == 14">
+		<!-- <view v-if="bookId == 14">
 			<view class="title">平凡的世界(1)</view>
 			<view class="c">
 				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
@@ -113,7 +113,7 @@
 				<img :src="imgUrl + '/pfdsj.jpg'" class="img" alt="">
 				<p>《平凡的世界》是中国作家路遥创作的一部全景式地表现中国当代城乡社会生活的百万字长篇小说。</p>
 			</view>
-		</view>
+		</view> -->
 		<view v-if="bookId == 17">
 			<view class="title">海底两万里(1)</view>
 			<view class="c">
@@ -184,6 +184,13 @@
 				<p>《海底两万里》是法国作家儒勒·凡尔纳创作的长篇小说，是“凡尔纳三部曲”的第二部。</p>
 			</view>
 		</view>
+		<view v-if="bookId == 27">
+			<view class="title">文化苦旅</view>
+			<view class="c">
+				<img :src="imgUrl + '/whkl.jpg'" class="img" alt="">
+				<p>《文化苦旅》是当代学者、作家余秋雨的一部散文集。于1992年首次出版</p>
+			</view>
+		</view>
 		<ul>
 			<li v-for="(item,index) in bookList2" :key="index" @click="goPage(item.Id)">{{item.FTitle}}</li>
 		</ul>
@@ -233,7 +240,7 @@
 				let that = this
 				let data = {
 					page: this.page,
-					intPageSize:200,
+					intPageSize:2000,
 				}
 				let header = {
 					'content-type': 'application/x-www-form-urlencoded',
@@ -277,6 +284,7 @@
 						}
 					}
 				}
+				console.log(this.bookList2)
 			},
 			goPage:function(id){
 				if(this.bookId == 1 || this.bookId == 2 || this.bookId == 3 || this.bookId == 8 || this.bookId == 9 || this.bookId == 10 || this.bookId == 11 || this.bookId == 12

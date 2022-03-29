@@ -44,7 +44,7 @@
 							<view class="txt">
 								<h2>{{item.name}}</h2>
 								<h3>{{item.spec}}</h3>
-								<view class="rmb">￥ <span>{{item.price}}</span>牛盾</view>
+								<view class="rmb">￥ <span>{{item.price}}</span>金盾</view>
 								<!-- <p>89人评价很好用</p> -->
 								<!-- <view class="pay">900人付款</view> -->
 							</view>
@@ -57,7 +57,7 @@
 							<view class="txt">
 								<h2>{{item.name}}</h2>
 								<h3>{{item.spec}}</h3>
-								<view class="rmb">￥ <span>{{item.price}}</span>牛盾</view>
+								<view class="rmb">￥ <span>{{item.price}}</span>金盾</view>
 								<!-- <p>89人评价很好用</p> -->
 								<!-- <view class="pay">900人付款</view> -->
 							</view>

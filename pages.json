@@ -205,6 +205,13 @@
 				"navigationBarTitleText": "学习云平台",
 				"enablePullDownRefresh":true
 			}
+		},
+		{
+			"path": "pages/serverCode",
+			"style": {
+				"navigationBarTitleText": "客服",
+				"enablePullDownRefresh":true
+			}
 		}
 	],
 	"globalStyle": {

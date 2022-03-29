@@ -59,12 +59,8 @@
 								res => {
 									// 获得数据
 									if (res.status == 200) {
-										uni.showToast({
-											title: '请重新登录初始化用户信息',
-											icon: "none"
-										});
-										uni.reLaunch({
-											url: '/pages/login',
+										uni.switchTab({
+											url: '/pages/tabs/index',
 										});
 									}
 								})

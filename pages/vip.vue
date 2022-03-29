@@ -4,7 +4,7 @@
 			会员VIP
 		</view>
 		<view class="tip" v-if="isvip">
-			尊敬的会员，您的会员到期日：{{userInfo.enddt}}
+			尊敬的会员，您的会员到期日：{{FormatToDate(userInfo.enddt)}}
 		</view>
 		<view class="module">
 			<view class="list" @tap="vipIndex = 1" :class="{'active':vipIndex == 1}">
@@ -167,6 +167,16 @@
 					.catch(res => {
 						console.log(res);
 					});
+			},
+			FormatToDate: function(val) {
+				if (val != null) {
+				    var date = new Date(parseInt(val.replace("/Date(", "").replace(")/", ""), 10));
+				    //月份为0-11，所以+1，月份小于10时补个0
+				    var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+				    var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+				    return date.getFullYear() + "-" + month + "-" + currentDate;
+				}
+				return "";
 			},
 			onShareAppMessage(){
 			},

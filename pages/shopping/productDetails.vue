@@ -5,7 +5,7 @@
 		<view class="wrap">
 			<u-swiper :list="list" indicator-pos="bottomCenter" mode="number" height="560"></u-swiper>
 		</view>
-		<h2>¥ <span>{{goodData.price}}</span>牛盾</h2>
+		<h2>¥ <span>{{goodData.price}}</span>金盾</h2>
 		<h3>{{goodData.name}}</h3>
 		<view class="price">
 			<p>购买数量</p>

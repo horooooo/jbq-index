@@ -15,7 +15,7 @@
 		<!-- <view class="music-icon" @tap="musicShow = true">
 			<img :src="imgUrl + '/icon/icon-music.png'" alt="">
 		</view> -->
-		<!-- <u-select v-model="musicShow" :list="musicList"  @confirm="confirm"  mode="single-column"></u-select> -->
+		<u-select v-model="musicShow" :list="musicList"  @confirm="confirm"  mode="single-column"></u-select>
 		<imtAudio v-if="restart" :src="musicSrc" style="margin-top: 30px;"></imtAudio>
 		<view class="list" style="text-align: center;color: #FFFFFF;">
 			{{lessonsData.content}}
