@@ -129,6 +129,13 @@
 			}
 		},
 		{
+			"path": "pages/shopping/order",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh":true
+			}
+		},
+		{
 			"path": "pages/shopping/mallSearch",
 			"style": {
 				"navigationBarTitleText": "商城搜索",
@@ -210,6 +217,13 @@
 			"path": "pages/serverCode",
 			"style": {
 				"navigationBarTitleText": "客服",
+				"enablePullDownRefresh":true
+			}
+		},
+		{
+			"path": "pages/message",
+			"style": {
+				"navigationBarTitleText": "消息中心",
 				"enablePullDownRefresh":true
 			}
 		}

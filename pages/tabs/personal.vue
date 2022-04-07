@@ -49,18 +49,19 @@
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-3.png'" alt="" @tap="intoUrl('achievement')"><br>成就</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-4.png'" alt="" @tap="intoUrl('friendRequest')"><br>好友</view>
 			</view>
-			<!-- <view class="list">
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-5.png'" alt=""><br>代付款</view>
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-6.png'" alt=""><br>待发货</view>
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-7.png'" alt=""><br>待收货</view>
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-8.png'" alt=""><br>评价</view>
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-9.png'" alt=""><br>售后</view>
-			</view> -->
+			<view class="list">
+				<!-- <view class="option"><img :src="imgUrl + '/icon/person-icon-5.png'" alt=""><br>代付款</view> -->
+				<!-- <view class="option"><img :src="imgUrl + '/icon/person-icon-6.png'" alt=""><br>待发货</view> -->
+				<view class="option"><img :src="imgUrl + '/icon/person-icon-7.png'" alt="" @tap="intoUrl('shopping/order')"><br>订单</view>
+				<!-- <view class="option"><img :src="imgUrl + '/icon/person-icon-8.png'" alt=""><br>评价</view> -->
+				<!-- <view class="option"><img :src="imgUrl + '/icon/person-icon-9.png'" alt=""><br>售后</view> -->
+			</view>
 			<view class="list">
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-10.png'" alt="" @tap="intoUrl('serverCode')"><br>客服</view>
-				<view class="option"><img :src="imgUrl + '/icon/person-icon-11.png'" alt="" @tap="intoUrl('personalData')"><br>设置</view>
+				<view class="option" v-show="vipSwitch != 'hide'"><img :src="imgUrl + '/icon/person-icon-11.png'" alt="" @tap="intoUrl('personalData')"><br>设置</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-12.png'" alt="" @tap="intoUrl('addFamilyTwo')"><br>家人</view>
 				<view class="option"><img :src="imgUrl + '/icon/person-icon-13.png'" alt="" @tap="intoUrl('inviteCode')"><br>邀请码</view>
+				<view class="option"><img :src="imgUrl + '/icon/person-icon-14.png'" alt="" @tap="intoUrl('message')"><br>消息中心</view>
 				<!-- <view class="option"><img :src="imgUrl + '/test/test2.png'" alt=""><br>消息</view> -->
 			</view>
 		</view>
