@@ -10,7 +10,7 @@
 			<view class="list" @tap="vipIndex = 1" :class="{'active':vipIndex == 1}">
 				<view class="card">
 					<view class="hot">限时充值</view>
-					<view class="tip a"> </view>
+					<view class="tip a">赠一个月会员</view>
 					<view class="money a">￥<span>66</span></view>
 					<view class="date a">一个月</view>
 				</view>
@@ -18,7 +18,7 @@
 			<view class="list" @tap="vipIndex = 2" :class="{'active':vipIndex == 2}">
 				<view class="card">
 					<view class="hot">赠送三个月会员</view>
-					<view class="tip a"> </view>
+					<view class="tip a">赠50金盾币</view>
 					<view class="money a">￥<span>199.8</span></view>
 					<view class="date a">三个月</view>
 				</view>
@@ -26,7 +26,7 @@
 			<view class="list" @tap="vipIndex = 3" :class="{'active':vipIndex == 3}">
 				<view class="card">
 					<view class="hot">赠送六个月会员</view>
-					<view class="tip a"> </view>
+					<view class="tip a">赠100金盾币</view>
 					<view class="money a">￥<span>399.6</span></view>
 					<view class="date a">六个月</view>
 				</view>
@@ -34,7 +34,7 @@
 			<view class="list" @tap="vipIndex = 4" :class="{'active':vipIndex == 4}">
 				<view class="card">
 					<view class="hot">SVIP</view>
-					<view class="tip a"> </view>
+					<view class="tip a">赠200金盾币</view>
 					<view class="money a">￥<span>666</span></view>
 					<view class="date a">永久会员</view>
 				</view>
