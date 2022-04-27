@@ -32,12 +32,12 @@
 </template>
 
 <script>
-	import comment from  '@/pages/include/comment.vue';
-	import gift from  '@/pages/include/gift.vue';
+	import comment from '@/pages/include/comment.vue';
+	import gift from '@/pages/include/gift.vue';
 	export default {
 		data() {
 			return {
-				imgUrl:this.$store.state.imgUrl,
+				imgUrl: this.$store.state.imgUrl,
 				pattern: {
 					color: '#7A7E83',
 					backgroundColor: '#ffffff',
@@ -72,53 +72,59 @@
 				horizontal: 'right',
 				vertical: 'bottom',
 				direction: 'horizontal',
-				articleContent:'',
-				commentList:'',
+				articleContent: '',
+				commentList: '',
+				share: {
+					title: '',
+					path:'',
+					imageUrl:''
+				}
 			}
 		},
-		components:{
-		    gift, comment
+		components: {
+			gift,
+			comment
 		},
 		created() {},
 		onLoad(option) {
 			this.getContent(option.id)
 		},
 		onPullDownRefresh() {
-		    uni.stopPullDownRefresh()
-		    uni.showToast({
-		    	title: "刷新成功",
-		    	icon: "none"
-		    });
+			uni.stopPullDownRefresh()
+			uni.showToast({
+				title: "刷新成功",
+				icon: "none"
+			});
 		},
 		methods: {
 			trigger: function(e) {
 				console.log(e);
 				// 找到当前内容数组中的索引
 				this.content[e.index].active = !e.item.active;
-				if(e.index == 0){
+				if (e.index == 0) {
 					// 礼物
 					this.giftDisplay(true)
-				} else if(e.index == 1){
+				} else if (e.index == 1) {
 					this.content[e.index].active = !e.item.active;
-					if(this.content[e.index].active){
+					if (this.content[e.index].active) {
 						this.content[1].text = '已点赞'
 					} else {
 						this.content[1].text = '点赞'
 					}
-				} else if(e.index == 2){
+				} else if (e.index == 2) {
 					this.commentDisplay(true)
-				} else if(e.index == 3){
+				} else if (e.index == 3) {
 					this.commentDisplay(true)
 				}
 			},
-			giftDisplay:function(is){
+			giftDisplay: function(is) {
 				this.$refs.gift.giftShow = is
 			},
 			sendComment: function(text) {
 				this.$refs.comment.commentShow = false
 				this.comment(text)
 			},
-			commentDisplay:function(is){
+			commentDisplay: function(is) {
 				this.$refs.comment.commentShow = is
 			},
 			getContent: function(id) {
@@ -127,13 +133,15 @@
 					'content-type': 'application/x-www-form-urlencoded',
 					'Authorization': 'Bearer ' + this.$store.state.token
 				}
-				this.$req.doRequest('GET', '/Lmvalue/Get/'+id, data, header).then(
+				this.$req.doRequest('GET', '/Lmvalue/Get/' + id, data, header).then(
 						res => {
 							// 获得数据
 							if (res.success) {
 								this.articleContent = res.response
-								this.articleContent.Memo = this.articleContent.Memo.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ');
+								this.articleContent.Memo = this.articleContent.Memo.replace(/\<img/gi,
+									'<img style="max-width:100%;height:auto" ');
 								this.getComment()
+								this.share.title = this.articleContent.title
 							}
 						})
 					.catch(res => {
@@ -181,9 +189,13 @@
 						console.log(res);
 					});
 			},
-			onShareAppMessage(){
+			onShareAppMessage() {
+				return this.share
+
 			},
-			onShareTimeline(){},
+			onShareTimeline() {
+				return this.share
+			},
 		},
 	}
 </script>
