@@ -1,67 +1,88 @@
 <template>
 	<view class="vip">
 		<view class="title">
-			会员VIP
+			<view :class="{active:vipTab == 1}" @click="vipTab = 1">会员VIP</view><view :class="{active:vipTab == 2}" @click="vipTab = 2">金盾币充值</view>
 		</view>
-		<view class="tip" v-if="isvip">
-			尊敬的会员，您的会员到期日：{{FormatToDate(userInfo.enddt)}}
-		</view>
-		<view class="module">
-			<view class="list" @tap="vipIndex = 1" :class="{'active':vipIndex == 1}">
-				<view class="card">
-					<view class="hot">限时充值</view>
-					<view class="tip a">赠一个月会员</view>
-					<view class="money a">￥<span>66</span></view>
-					<view class="date a">一个月</view>
+		<view v-show="vipTab == 1">
+			<view class="tip" v-if="isvip">
+				尊敬的会员，您的会员到期日：{{FormatToDate(userInfo.enddt)}}
+			</view>
+			<view class="module">
+				<view class="list" @tap="vipIndex = 1" :class="{'active':vipIndex == 1}">
+					<view class="card">
+						<view class="hot">限时充值</view>
+						<view class="tip a">赠一个月会员</view>
+						<view class="money a">￥<span>66</span></view>
+						<view class="date a">一个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 2" :class="{'active':vipIndex == 2}">
+					<view class="card">
+						<view class="hot">赠送三个月会员</view>
+						<view class="tip a">赠50金盾币</view>
+						<view class="money a">￥<span>199.8</span></view>
+						<view class="date a">三个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 3" :class="{'active':vipIndex == 3}">
+					<view class="card">
+						<view class="hot">赠送六个月会员</view>
+						<view class="tip a">赠100金盾币</view>
+						<view class="money a">￥<span>399.6</span></view>
+						<view class="date a">六个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 4" :class="{'active':vipIndex == 4}">
+					<view class="card">
+						<view class="hot">SVIP</view>
+						<view class="tip a">赠200金盾币</view>
+						<view class="money a">￥<span>666</span></view>
+						<view class="date a">永久会员</view>
+					</view>
 				</view>
 			</view>
-			<view class="list" @tap="vipIndex = 2" :class="{'active':vipIndex == 2}">
-				<view class="card">
-					<view class="hot">赠送三个月会员</view>
-					<view class="tip a">赠50金盾币</view>
-					<view class="money a">￥<span>199.8</span></view>
-					<view class="date a">三个月</view>
+			<view class="button">
+				<button @tap="vipPay()">立即充值</button>
+			</view>
+		</view>
+		<view v-show="vipTab == 2">
+			<view class="module">
+				<view class="list" @tap="vipIndex = 1" :class="{'active':vipIndex == 1}">
+					<view class="card">
+						<view class="hot">限时充值</view>
+						<view class="tip a">赠一个月会员</view>
+						<view class="money a">￥<span>66</span></view>
+						<view class="date a">一个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 2" :class="{'active':vipIndex == 2}">
+					<view class="card">
+						<view class="hot">赠送三个月会员</view>
+						<view class="tip a">赠50金盾币</view>
+						<view class="money a">￥<span>199.8</span></view>
+						<view class="date a">三个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 3" :class="{'active':vipIndex == 3}">
+					<view class="card">
+						<view class="hot">赠送六个月会员</view>
+						<view class="tip a">赠100金盾币</view>
+						<view class="money a">￥<span>399.6</span></view>
+						<view class="date a">六个月</view>
+					</view>
+				</view>
+				<view class="list" @tap="vipIndex = 4" :class="{'active':vipIndex == 4}">
+					<view class="card">
+						<view class="hot">SVIP</view>
+						<view class="tip a">赠200金盾币</view>
+						<view class="money a">￥<span>666</span></view>
+						<view class="date a">永久会员</view>
+					</view>
 				</view>
 			</view>
-			<view class="list" @tap="vipIndex = 3" :class="{'active':vipIndex == 3}">
-				<view class="card">
-					<view class="hot">赠送六个月会员</view>
-					<view class="tip a">赠100金盾币</view>
-					<view class="money a">￥<span>399.6</span></view>
-					<view class="date a">六个月</view>
-				</view>
+			<view class="button">
+				<button @tap="vipPay()">立即充值</button>
 			</view>
-			<view class="list" @tap="vipIndex = 4" :class="{'active':vipIndex == 4}">
-				<view class="card">
-					<view class="hot">SVIP</view>
-					<view class="tip a">赠200金盾币</view>
-					<view class="money a">￥<span>666</span></view>
-					<view class="date a">永久会员</view>
-				</view>
-			</view>
-			<!-- <view class="list" @tap="vipIndex = 5" :class="{'active':vipIndex == 5}">
-				<view class="card">
-					<view class="hot">测试</view>
-					<view class="tip a">200元代金券</view>
-					<view class="money a">￥<span>0.01</span></view>
-					<view class="date a">测试</view>
-				</view>
-			</view> -->
-		</view>
-		<!-- <view class="tips">
-			会员到期前一天自动续费一个月，可随时关闭
-		</view> -->
-		<!-- <view class="tips">
-			请扫码二维码付费，付费后请保存付款记录联系工作人员
-		</view>
-		<view class="img" style="text-align: center;">
-			<image :src="imgUrl + '/payCode.jpg'"></image>
-		</view>
-		<view class="img" style="text-align: center;">
-			<image :src="imgUrl + '/wx_code.jpg'"></image>
-		</view> -->
-		<view class="button">
-			<button @tap="vipPay()">立即充值</button>
 		</view>
 		<jiangli ref="jiangli" :CurrencyMoney="CurrencyMoney" :CurrencyJifen="CurrencyJifen"></jiangli>
 	</view>
@@ -78,6 +99,7 @@
 				isvip:this.$store.state.isvip,
 				CurrencyMoney:0,
 				CurrencyJifen:0,
+				vipTab:1,
 			}
 		},
 		created() {
