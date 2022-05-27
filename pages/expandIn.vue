@@ -191,6 +191,76 @@
 				<p>《文化苦旅》是当代学者、作家余秋雨的一部散文集。于1992年首次出版</p>
 			</view>
 		</view>
+		<view v-if="bookId == 28">
+			<view class="title">爱的教育</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs28.jpg'" class="img" alt="">
+				<p>是意大利作家埃迪蒙托·德·亚米契斯创作的长篇日记体小说</p>
+			</view>
+		</view>
+		<view v-if="bookId == 29">
+			<view class="title">繁星春水</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs29.jpg'" class="img" alt="">
+				<p>我国现代著名女作家冰心创作的两部诗集，二者是姊妹篇，均创作于1923年</p>
+			</view>
+		</view>
+		<view v-if="bookId == 30">
+			<view class="title">钢铁是怎样炼成的</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs30.jpg'" class="img" alt="">
+				<p>是前苏联作家尼古拉·奥斯特洛夫斯基所著的一部长篇小说，于1933年写成</p>
+			</view>
+		</view>
+		<view v-if="bookId == 31">
+			<view class="title">假如给我三天光明</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs31.jpg'" class="img" alt="">
+				<p>是美国当代作家海伦·凯勒的散文代表作</p>
+			</view>
+		</view>
+		<view v-if="bookId == 32">
+			<view class="title">昆虫记</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs32.jpg'" class="img" alt="">
+				<p>是法国昆虫学家、文学家让-亨利·卡西米尔·法布尔创作的长篇生物学著作，共十卷。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 33">
+			<view class="title">老人与海</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs33.jpg'" class="img" alt="">
+				<p>是美国作家海明威于1951年在古巴写的一篇中篇小说，于1952年出版</p>
+			</view>
+		</view>
+		<view v-if="bookId == 34">
+			<view class="title">呐喊</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs34.jpg'" class="img" alt="">
+				<p>是现代文学家鲁迅的短篇小说集，收录鲁迅于1918年至1922年所作的14篇短篇小说</p>
+			</view>
+		</view>
+		<view v-if="bookId == 35">
+			<view class="title">男生贾里</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs35.jpg'" class="img" alt="">
+				<p>该书主要讲述一个名叫贾里的男生身边所发生的事情。</p>
+			</view>
+		</view>
+		<view v-if="bookId == 36">
+			<view class="title">女生贾梅</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs36.jpg'" class="img" alt="">
+				<p>是2011年少年儿童出版社出版的图书，该书是秦文君的儿童文学作品</p>
+			</view>
+		</view>
+		<view v-if="bookId == 37">
+			<view class="title">威尼斯商人</view>
+			<view class="c">
+				<img :src="imgUrl + '/dzs37.jpg'" class="img" alt="">
+				<p>是英国戏剧家威廉·莎士比亚创作的戏剧，是一部具有讽刺性的喜剧。</p>
+			</view>
+		</view>
 		<ul>
 			<li v-for="(item,index) in bookList2" :key="index" @click="goPage(item.Id)">{{item.FTitle}}</li>
 		</ul>

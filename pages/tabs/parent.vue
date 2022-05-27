@@ -192,6 +192,66 @@
 					</u-line-progress>
 					<h2>海底两万里(2)</h2>
 				</view>
+				<view class="box" @click="gototzin(28)">
+					<img :src="imgUrl + '/dzs28.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>爱的教育</h2>
+				</view>
+				<view class="box" @click="gototzin(29)">
+					<img :src="imgUrl + '/dzs29.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>繁星春水</h2>
+				</view>
+				<view class="box" @click="gototzin(30)">
+					<img :src="imgUrl + '/dzs30.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>钢铁是怎样炼成的</h2>
+				</view>
+				<view class="box" @click="gototzin(31)">
+					<img :src="imgUrl + '/dzs31.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>假如给我三天光明</h2>
+				</view>
+				<view class="box" @click="gototzin(32)">
+					<img :src="imgUrl + '/dzs32.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>昆虫记</h2>
+				</view>
+				<view class="box" @click="gototzin(33)">
+					<img :src="imgUrl + '/dzs33.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>老人与海</h2>
+				</view>
+				<view class="box" @click="gototzin(34)">
+					<img :src="imgUrl + '/dzs34.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>呐喊</h2>
+				</view>
+				<view class="box" @click="gototzin(35)">
+					<img :src="imgUrl + '/dzs35.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>男生贾里</h2>
+				</view>
+				<view class="box" @click="gototzin(36)">
+					<img :src="imgUrl + '/dzs36.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>女生贾梅</h2>
+				</view>
+				<view class="box" @click="gototzin(37)">
+					<img :src="imgUrl + '/dzs37.jpg'" class="img" alt="">
+					<u-line-progress active-color="#5f9fd7" :show-percent="false" :height="12" :percent="100" class="c">
+					</u-line-progress>
+					<h2>威尼斯商人</h2>
+				</view>
 			</view>
 			<view class="tz" v-show="mp3TypeValue == 2">
 				<view class="box" @click="gototzin(4)">
