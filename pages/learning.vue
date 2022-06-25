@@ -5,7 +5,7 @@
 			<u-steps :list="numList" :current="current" active-color="#54c1fc"></u-steps>
 		</view>
 		<view class="title">
-			<text>{{title}}</text> <input type="text" style="width: 200px;">
+			<text>{{title}}</text> <input type="text" style="width: 200px;height: 33.58px; padding-left:15px; box-sizing:border-box;">
 		</view>
 		<div id="jsmind_container"></div>
 		<view class="step-content">
@@ -14,7 +14,7 @@
 			</view>
 			<view class="input-list">
 				<view class="list" v-for="(item, index) in stepInputList[current].list">
-					<text>{{item.name}}</text><input type="text" v-model="item.value">
+					<text>{{item.name}}</text><input type="text" v-model="item.value" style="height: 33.58px; padding-left:15px; box-sizing:border-box;">
 				</view>
 			</view>
 		</view>
